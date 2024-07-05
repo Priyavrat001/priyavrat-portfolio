@@ -1,0 +1,80 @@
+{
+    "skills": [
+      {
+        "id": "1",
+        "src": "./img/product-chain-1.png",
+        "title": "Front-End",
+        "description": "User interfaces, HTML, CSS, JavaScript and typescript, responsive design, frameworks like reactjs, pixel-perfect, UX/UI, collaboration, creativity."
+      },
+      {
+        "id": "2",
+        "src": "./img/tag-1.png",
+        "title": "Back-End",
+        "description": "Backend developer: Node.js, Express.js, TypeScript proficiency, RESTful APIs, database integration, scalability, security, performance optimization"
+      },
+      {
+        "id": "3",
+        "src": "./img/feather-pen-2.png",
+        "title": "UI & UX Design",
+        "description": "UI/UX design: Tailwind, Bootstrap, SCSS for responsive layouts, user-centric interfaces, aesthetic consistency, accessibility, interactive prototypes"
+      },
+      {
+        "id": "4",
+        "src": "./img/feather-pen-1.png",
+        "title": "Headless CMS",
+        "description": "Skilled in utilizing Sanity.io for agile content management, API integration, real-time collaboration, and delivering dynamic digital experiences."
+      }
+    ],
+    "portfolio": [
+      {
+        "id": "1",
+        "src": "./chatproject.png",
+        "title": "Chat App",
+        "description": "I build a chat app using React, Express, Socket io and added dashboard for the managing user profile for the admin",
+        "link": "View In Github",
+        "link2": "https://chat-app-frontend-tan-phi.vercel.app/"
+      },
+      {
+        "id": "2",
+        "src": "./mystore.png",
+        "title": "Ecommerce App",
+        "description": "This is an e commerce app in this project i used it TypeScript, Express, React and MongoDB and added a dashboard",
+        "link": "https://google.com",
+        "link2": "https://mystore-frontend-black.vercel.app/"
+      },
+      {
+        "id": "3",
+        "src": "./chatproject.png",
+        "title": "App Dashboard",
+        "description": "In this project i build an app dashboard ui using TypeScript and react.",
+        "link": "View In Github",
+        "link2": "View Live"
+      }
+    ],
+    "testimonial": [
+      {
+        "id": "1",
+        "count": "5",
+        "src": "./img/avatar-image.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+        "author_name": "Dianne Russel",
+        "author_designation": "Starbucks"
+      },
+      {
+        "id": "2",
+        "count": "5",
+        "src": "./img/avatar-image-1.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+        "author_name": "Kristin Watson",
+        "author_designation": "Louis Vuitton"
+      },
+      {
+        "id": "3",
+        "count": "5",
+        "src": "./img/avatar-image-2.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+        "author_name": "Kathryn Murphy",
+        "author_designation": "McDonald's"
+      }
+    ]
+  }
