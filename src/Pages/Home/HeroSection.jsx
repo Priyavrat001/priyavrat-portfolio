@@ -1,3 +1,5 @@
+import PriyavratPort from "../../data/CV/Priyavrat_kumar.pdf";
+
 export default function HeroSection() {
   return (
     <section id="heroSection" className="hero--section">
@@ -15,7 +17,7 @@ export default function HeroSection() {
             <br />  Full-stack expertise.
           </p>
         </div>
-        <a href="/path/to/your/CV.pdf" download="YourCV.pdf" className="btn btn-primary button-center mt-5">Download CV</a>
+        <a href={PriyavratPort} download="priyavratCV.pdf" className="btn btn-primary button-center mt-5">Download CV</a>
       </div>
       <div className="hero--section--img">
         <img src="	https://i.pinimg.com/736x/a8/ab/a8/a8aba8597ff696d9f8b423a25e396c64.jpg" alt="Hero Section" />
