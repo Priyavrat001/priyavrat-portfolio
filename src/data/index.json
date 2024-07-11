@@ -31,7 +31,7 @@
         "src": "./chatproject.png",
         "title": "Chat App",
         "description": "I build a chat app using React, Express, Socket io and added dashboard for the managing user profile for the admin",
-        "link": "View In Github",
+        "link": "https://github.com/Priyavrat001/chat-app-frontend",
         "link2": "https://chat-app-frontend-tan-phi.vercel.app/"
       },
       {
@@ -39,16 +39,16 @@
         "src": "./mystore.png",
         "title": "Ecommerce App",
         "description": "This is an e commerce app in this project i used it TypeScript, Express, React and MongoDB and added a dashboard",
-        "link": "https://google.com",
+        "link": "https://github.com/Priyavrat001/mystore-frontend",
         "link2": "https://mystore-frontend-black.vercel.app/"
       },
       {
         "id": "3",
-        "src": "./chatproject.png",
+        "src": "./dashboard.png",
         "title": "App Dashboard",
         "description": "In this project i build an app dashboard ui using TypeScript and react.",
-        "link": "View In Github",
-        "link2": "View Live"
+        "link": "https://github.com/Priyavrat001/App-Dashboard",
+        "link2": "https://app-dashboard-ivory.vercel.app/"
       }
     ],
     "testimonial": [

@@ -90,7 +90,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link
+            {/* <Link
               onClick={closeMenu}
               activeClass="navbar--active-content"
               spy={true}
@@ -101,7 +101,7 @@ function Navbar() {
               className="navbar--content"
             >
               Testimonials
-            </Link>
+            </Link> */}
           </li>
         </ul>
       </div>

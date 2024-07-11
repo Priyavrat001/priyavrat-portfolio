@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useState } from "react";
 import toast from 'react-hot-toast';
 
 
@@ -16,7 +16,7 @@ export default function ContactMe() {
     e.preventDefault();
     
     try {
-      const response = await fetch("https://priyavrat-portfolio.onrender.com/api/v1/contact", {
+      const response = await fetch("http://localhost:4000/api/v1/contact", {
       method:"POST",
       headers:{
           "Content-Type":"application/json"
@@ -25,21 +25,21 @@ export default function ContactMe() {
     });
     const json = await response.json();
 
-    console.log(json.success)
-
     if(json.success){
-      setContact({});
       return toast.success("Message send successfully")
     }
     
     } catch (error) {
       toast.error("Something went wrong")
     }
-  }
+  };
+  
+  
 
   const handleChange = (e) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
   }
+  
 
   return (
     <section id="Contact" className="contact--section">
