@@ -15,6 +15,7 @@ export default function SpotifyPage() {
       setTracks(res.data.items);
     } catch (err) {
       console.error(err.message);
+      alert("Failed to load top tracks. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -26,6 +27,7 @@ export default function SpotifyPage() {
       setNowPlaying(res.data?.item || null);
     } catch (err) {
       console.error(err.message);
+      alert("Failed to load the current track. Please try again.");
     }
   };
 
@@ -54,12 +56,15 @@ export default function SpotifyPage() {
     if (code) {
       // We've been redirected from Spotify login
       axios
-        .get(`${API}/callback?code=${code}`)
+        .post(`${API}/callback`, { code })  // Changed to POST
         .then(() => {
           fetchTopTracks();
           fetchNowPlaying();
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+          console.error(err);
+          alert("Failed to authenticate with Spotify. Please try again.");
+        });
     }
   }, []);
 
