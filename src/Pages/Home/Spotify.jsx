@@ -3,6 +3,14 @@ import axios from "axios";
 
 const API = "https://priyavrat-portfolio-backend.onrender.com/api/v1";
 
+const CLIENT_ID = "8b669a9b6b9d4887bbc90c39938b6730";
+const REDIRECT_URI = encodeURIComponent(`${API}/callback`);
+const SCOPE = encodeURIComponent(
+  "user-read-playback-state user-read-currently-playing user-top-read user-modify-playback-state streaming user-read-private"
+);
+
+const AUTH_URL = `https://accounts.spotify.com/authorize?response_type=code&client_id=${CLIENT_ID}&scope=${SCOPE}&redirect_uri=${REDIRECT_URI}`;
+
 export default function SpotifyPage() {
   const [tracks, setTracks] = useState([]);
   const [nowPlaying, setNowPlaying] = useState(null);
@@ -14,8 +22,7 @@ export default function SpotifyPage() {
       const res = await axios.get(`${API}/top-tracks`);
       setTracks(res.data.items);
     } catch (err) {
-      console.error(err.message);
-      alert("Failed to load top tracks. Please try again.");
+      console.error("Top Tracks Error:", err.message);
     } finally {
       setLoading(false);
     }
@@ -26,8 +33,7 @@ export default function SpotifyPage() {
       const res = await axios.get(`${API}/now-playing`);
       setNowPlaying(res.data?.item || null);
     } catch (err) {
-      console.error(err.message);
-      alert("Failed to load the current track. Please try again.");
+      console.error("Now Playing Error:", err.message);
     }
   };
 
@@ -36,7 +42,7 @@ export default function SpotifyPage() {
       await axios.put(`${API}/play/${id}`);
       fetchNowPlaying();
     } catch (err) {
-      console.error(err.message);
+      console.error("Play Error:", err.message);
     }
   };
 
@@ -45,7 +51,7 @@ export default function SpotifyPage() {
       await axios.put(`${API}/stop`);
       fetchNowPlaying();
     } catch (err) {
-      console.error(err.message);
+      console.error("Stop Error:", err.message);
     }
   };
 
@@ -54,17 +60,13 @@ export default function SpotifyPage() {
     const code = query.get("code");
 
     if (code) {
-      // We've been redirected from Spotify login
       axios
-        .post(`${API}/callback`, { code })  // Changed to POST
+        .get(`${API}/callback?code=${code}`)
         .then(() => {
           fetchTopTracks();
           fetchNowPlaying();
         })
-        .catch((err) => {
-          console.error(err);
-          alert("Failed to authenticate with Spotify. Please try again.");
-        });
+        .catch((err) => console.error("Callback Error:", err));
     }
   }, []);
 
@@ -72,7 +74,7 @@ export default function SpotifyPage() {
     <div style={{ padding: 20 }}>
       <h1>🎧 Spotify Dashboard</h1>
 
-      <a href={`${API}/login`}>
+      <a href={AUTH_URL}>
         <button style={{ marginBottom: 20 }}>Login with Spotify</button>
       </a>
 
